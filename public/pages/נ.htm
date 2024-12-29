@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>מילון</title>
+
+<style>
+
+.center {
+  margin: auto;
+  width: 10%;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+
+</style>
+
+
+<style type="text/css">
+.style2 {
+	text-align: right;
+}
+.style3 {
+	text-align: center;
+}
+.style4 {
+	color: #FF00CC;
+	
+}
+.style5 {
+	color: #800000;
+}
+.style6 {
+    font-size: 20px;
+	color: #000000;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<h1 class="style3">&nbsp; <span class="style5">מושגים בקבלה&nbsp;&nbsp; </span>
+<span class="style4">נ</span></h1>
+
+
+
+<div class="grid-container">
+
+<div>
+<img id="myImg" src="images/000.jpg" width="600" height="320" >
+</div>
+
+<div>
+<select id='s' size="18"  class="style2">
+    <option value = "nekuda_013">נקודה אמצעית</option>
+    <option value = "nekudot_017">נקודות</option>
+    <option value = "nekudot de sag_025">נקודות דס"ג</option>
+    <option value = "nekudot de nekudim_028">נקודות דעולם הנקודים</option>
+    <option value = "nekudot din_017">נקודות כדין</option>
+    <option value = "neshama_009">נשמה</option>
+</select>
+</div>
+
+<div>
+<pre id="source"  class="style6"></pre>
+</div> 
+
+
+
+<div>
+<audio controls id="myAudio" autoplay>
+  <source id="ogg_src"  type="audio/ogg">
+  <source id="mp3_src"  type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+
+</div>
+<script>
+
+  document.getElementById("source").innerText = "      ";
+  var select = document.getElementById('s');
+
+
+  
+  select.addEventListener("click", function(e) {
+     
+      
+     var el = document.getElementById("myImg")
+     let  str = select.options[select.selectedIndex].value ;
+     el.src = "images/" + str.substring(str.length-3,str.length) + ".jpg";
+     str = str.substring(0, str.length-4);
+     
+     document.getElementById("source").innerText = mySource(str);
+     document.getElementById("ogg_src").src = "sound/" + str + ".ogg";
+     document.getElementById("mp3_src").src = "sound/" + str + ".mp3";
+     document.getElementById("myAudio").load().play();
+     
+  });
+    
+  function mySource(selStr){
+     let resStr;
+     switch(selStr) {
+      case "nekuda":
+	    resStr = "פתיחה אות יד"  
+	    break;
+	  case "nekudot":
+	    resStr = "פתיחה אות מו-מט"  
+	    break;
+	  case "nekudot de nekudim":
+	    resStr = "תעס,ו, תכד-תכה"  
+	    break;
+	  case "nekudot de sag":
+	    resStr = "תעס,ו, שצה-שצו"  
+	    break;
+	  case "nekudot din":
+	    resStr = "פתיחה אות מו-מט"  
+	    break;
+	  case "neshama":
+	    resStr = "פתיחה אות ו-י" 
+	    break;
+	  default:
+	    resStr = "  " 
+	}
+	return resStr;
+  }
+
+</script>   
+ 
+    
+
+</body>
+
+</html>

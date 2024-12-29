@@ -1,0 +1,15 @@
+{
+  "name": "milon",
+  "version": "1.0.0",
+  "description": "Yuri's TES dictionary",
+  "main": "/public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yuri-milon-tes"
+  },
+  "author": "",
+  "license": "ISC"
+}
